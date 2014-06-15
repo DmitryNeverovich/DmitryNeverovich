@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+            targetNamespace="http://www.example.com/Greenhouse"
+            xmlns:tn="http://www.example.com/Greenhouse">
+	
+    <element name="greenhouse">
+        <complexType>
+            <sequence>
+                <element name="flower" type="tn:Flower" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+        
+    <complexType name="Flower">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="hight" type="tn:Hight"/>
+            <element name="soil" type="tn:Soil"/>
+            <element name="origin" type="string"/>
+            <element name="multiplying" type="tn:Multiplying"/>
+            <element name="visualParameters" type="tn:VisualParameters"/>
+        </sequence>
+        <attribute name="id" type="tn:Number" use="required"/>
+        <attribute name="family" type="string" use="required"/>
+    </complexType>
+    
+    <complexType name="VisualParameters">
+        <sequence>
+            <element name="colorStalk" type="string"/>
+            <element name="colorList" type="string"/>
+            <element name="growingtips" type="tn:Growingtips"/>				
+        </sequence>
+    </complexType>
+		
+    <complexType name="Growingtips">
+        <sequence>
+            <element name="temperature" type="integer"/>
+            <element name="light" type="tn:Light"/>
+            <element name="water" type="integer"/>
+        </sequence>
+    </complexType>
+    
+    <simpleType name="Hight">
+        <restriction base="integer">
+            <minInclusive value="5"/>
+            <maxInclusive value="100"/>
+        </restriction>
+    </simpleType>  
+    
+     <simpleType name="Number">
+        <restriction base="ID">
+            <pattern value="[a-z][0-9]+"/>
+        </restriction>
+    </simpleType>           
+                                        
+    <simpleType name="Soil">
+        <restriction base="string">
+            <enumeration value="podzolic"/>
+            <enumeration value="sod-podzolic"/>
+            <enumeration value="dirt"/>
+        </restriction>
+    </simpleType>
+		
+    <simpleType name="Multiplying">
+        <restriction base="string">
+            <enumeration value="plate"/>
+            <enumeration value="seed"/>
+            <enumeration value="cutting"/>
+        </restriction>
+    </simpleType>	
+    
+    <simpleType name="Light">
+        <restriction base="string">
+            <enumeration value="low"/>
+            <enumeration value="average"/>
+            <enumeration value="high"/>
+        </restriction>
+    </simpleType>	
+  
+</schema>
+

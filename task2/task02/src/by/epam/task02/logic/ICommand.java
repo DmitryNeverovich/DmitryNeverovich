@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package by.epam.task02.workText;
+package by.epam.task02.logic;
 
-import by.epam.task02.text.IComponent;
+import by.epam.task02.entity.IComponent;
 
 /**
  *

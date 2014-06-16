@@ -1,4 +1,4 @@
-package by.epam.task02.text;
+package by.epam.task02.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author Dima
  */
-public class Text extends IComponent{
+public class Text implements IComponent{
     private List <IComponent> partText;
 
     
@@ -57,7 +57,7 @@ public class Text extends IComponent{
 
     @Override
     public String toString() {
-        return "Text{" + "sentence=" + partText + '}';
+        return this.getClass()+"{" + "sentence=" + partText + '}';
     }
 
     @Override

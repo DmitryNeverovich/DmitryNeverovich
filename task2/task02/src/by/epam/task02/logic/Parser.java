@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package by.epam.task02.parser;
+package by.epam.task02.logic;
 
-import by.epam.task02.text.Block;
-import by.epam.task02.text.IComponent;
-import by.epam.task02.text.Sentence;
-import by.epam.task02.text.Text;
-import by.epam.task02.text.PartSentence;
+import by.epam.task02.entity.Block;
+import by.epam.task02.entity.IComponent;
+import by.epam.task02.entity.Sentence;
+import by.epam.task02.entity.Text;
+import by.epam.task02.entity.PartSentence;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -32,7 +32,7 @@ public class Parser {
       
         return text;
     }
-    
+        
     private static List<IComponent> parserPartSentence(String sentenceStr){
         List<IComponent> listPartSentence = new ArrayList();
         Pattern pPartSentence = Pattern.compile(PART_SENTENCE_EXPRESSION);

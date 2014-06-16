@@ -6,11 +6,11 @@
 
 package by.epam.task02;
 
-import by.epam.task02.parser.Parser;
-import by.epam.task02.text.IComponent;
-import by.epam.task02.workText.ICommand;
-import by.epam.task02.workText.SortSentenceSize;
-import by.epam.task02.workText.UniquePartSentence;
+import by.epam.task02.logic.Parser;
+import by.epam.task02.entity.IComponent;
+import by.epam.task02.logic.ICommand;
+import by.epam.task02.logic.SortSentenceSize;
+import by.epam.task02.logic.UniquePartSentence;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
  * @author Dima
  */
 public class Task02 {
-    private static final Logger logger = Logger.getLogger(Task02.class);
+   // private static final Logger logger = Logger.getLogger(Task02.class);
     /**
      * @param args the command line arguments
      */
@@ -42,7 +42,6 @@ public class Task02 {
         }    
         } catch (IOException e) {
             logger.error(e);
-            e.printStackTrace();
         }
         String source = sb.toString();
                 

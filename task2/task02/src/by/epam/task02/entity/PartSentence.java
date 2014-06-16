@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 
-package by.epam.task02.text;
+package by.epam.task02.entity;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,7 +16,7 @@ import java.util.Objects;
  *
  * @author Dima
  */
-public class PartSentence extends IComponent{
+public class PartSentence implements IComponent{
     private String partSentence;
 
     public PartSentence(String partSentence) {
@@ -53,12 +55,32 @@ public class PartSentence extends IComponent{
 
     @Override
     public String toString() {
-        return "PartSentence{" + "partSentence =" + partSentence + '}';
+        return this.getClass().getSimpleName()+"{" + "partSentence =" + partSentence + '}';
     }
 
     @Override
     public String getContent() {
         return partSentence+" ";
+    }
+
+    @Override
+    public void add(IComponent component) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void remove(int index) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void addAll(Collection<IComponent> components) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Iterator<IComponent> getIterator() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
         
 }

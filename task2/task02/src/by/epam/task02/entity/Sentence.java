@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package by.epam.task02.text;
+package by.epam.task02.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,7 +16,7 @@ import java.util.Objects;
  *
  * @author Dima
  */
-public class Sentence extends IComponent{
+public class Sentence implements IComponent{
     private List<IComponent> partSentense;
     public Sentence() {
         partSentense = new ArrayList<IComponent>();
@@ -64,7 +64,7 @@ public class Sentence extends IComponent{
 
     @Override
     public String toString() {
-        return "Sentence{" + "partSentense=" + partSentense + '}';
+        return this.getClass().getSimpleName()+"{" + "partSentense=" + partSentense + '}';
     }
 
     @Override

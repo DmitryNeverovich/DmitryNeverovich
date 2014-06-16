@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-package by.epam.task02.workText;
+package by.epam.task02.logic;
 
-import by.epam.task02.text.IComponent;
-import by.epam.task02.text.Sentence;
-import by.epam.task02.text.Text;
+import by.epam.task02.entity.IComponent;
+import by.epam.task02.entity.Sentence;
+import by.epam.task02.entity.Text;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

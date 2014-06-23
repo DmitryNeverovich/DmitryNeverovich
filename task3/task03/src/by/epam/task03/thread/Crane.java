@@ -25,7 +25,6 @@ public class Crane implements Runnable {
     private Moorage moorage;
 
     public Crane(Port port, Moorage moorage) {
-        logger.warn("Кран создался");
         rand = new Random();
         this.moorage = moorage;
         this.port = port;

@@ -10,6 +10,8 @@ import by.epam.task03.entity.Moorage;
 import by.epam.task03.entity.Port;
 import by.epam.task03.entity.Ship;
 import java.util.Iterator;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import org.apache.log4j.Logger;
 
 /**
@@ -20,9 +22,11 @@ public class Longboat implements Runnable {
     private final static Logger logger = Logger.getLogger( Longboat.class ); 
     
     private Acvatory acvatory;
+    private Lock lock;
 
     public Longboat(Acvatory acvatory) {
         this.acvatory = acvatory;
+        lock = new ReentrantLock();
     }
 
     @Override

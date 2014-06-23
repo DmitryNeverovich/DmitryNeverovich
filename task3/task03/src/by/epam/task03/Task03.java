@@ -29,7 +29,7 @@ public class Task03 {
         Port port = new Port(3);
         Acvatory acvatory = new Acvatory(port);
         
-        ExecutorService ex = Executors.newFixedThreadPool(3);
+        ExecutorService ex = Executors.newCachedThreadPool();
         ex.execute(new GenerateShip(acvatory));
         ex.execute(new Longboat(acvatory));
         ex.execute(new Crane(port, port.getMoorage(0)));

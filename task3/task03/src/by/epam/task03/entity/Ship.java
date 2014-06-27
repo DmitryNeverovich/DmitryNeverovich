@@ -5,7 +5,7 @@
  */
 package by.epam.task03.entity;
 
-import java.util.Random;
+import java.util.Objects;
 
 /**
  *
@@ -16,20 +16,16 @@ public class Ship {
     private static final int MAX_SIZE_CONTAINER = 200;
     private int number;
     private int container;
-    private Action action;
+    private Target target;
 
-    public Ship(int number, int conteiner, Action action) {
+    public Ship(int number, int container, Target target) {
         this.number = number;
         this.container = container;
-        this.action = action;
+        this.target = target;
     }
 
-    public void setAction(Action action) {
-        this.action = action;
-    }
-
-    public Action getAction() {
-        return action;
+    public Target getTarget() {
+        return target;
     }
 
     public int getContainer() {
@@ -62,9 +58,43 @@ public class Ship {
         return complete;
     }
 
+    public int getSize() {
+        return MAX_SIZE_CONTAINER;
+    }
+    
     @Override
     public String toString() {
-        return getClass().getSimpleName()+"{" + "number=" + number + ", container=" + container + ", action=" + action + '}';
+        return getClass().getSimpleName()+"{" + "number=" + number + ", container=" + container + ", target=" + target + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 59 * hash + this.number;
+        hash = 59 * hash + this.container;
+        hash = 59 * hash + Objects.hashCode(this.target);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Ship other = (Ship) obj;
+        if (this.number != other.number) {
+            return false;
+        }
+        if (this.container != other.container) {
+            return false;
+        }
+        if (this.target != other.target) {
+            return false;
+        }
+        return true;
     }
     
     

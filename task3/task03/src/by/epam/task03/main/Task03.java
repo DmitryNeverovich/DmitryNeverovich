@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package by.epam.task03;
+package by.epam.task03.main;
 
 import by.epam.task03.entity.Acvatory;
 import by.epam.task03.entity.Port;
@@ -32,9 +32,9 @@ public class Task03 {
         ExecutorService ex = Executors.newCachedThreadPool();
         ex.execute(new GenerateShip(acvatory));
         ex.execute(new Longboat(acvatory));
-        ex.execute(new Crane(port, port.getMoorage(0)));
-        ex.execute(new Crane(port, port.getMoorage(1)));
-        ex.execute(new Crane(port, port.getMoorage(2)));        
+        ex.execute(new Crane(port, port.getMoorage(0),0));
+        ex.execute(new Crane(port, port.getMoorage(1),1));
+        ex.execute(new Crane(port, port.getMoorage(2),2));        
         
         Thread.sleep(10000);
         

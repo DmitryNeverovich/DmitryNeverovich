@@ -10,7 +10,9 @@ package by.epam.task03.entity;
  *
  * @author Dima
  */
-public enum Action {
-    LOADING,
-    UNLOADING;
+public enum Target {
+    LOAD_PORT,
+    UNLOAD_PORT,
+    LOAD_SHIP_TO_SHIP,
+    UNLOAD_SHIP_TO_SHIP;
 }

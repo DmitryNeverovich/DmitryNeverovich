@@ -6,6 +6,8 @@
 
 package by.epam.task03.entity;
 
+import java.util.Objects;
+
 /**
  *
  * @author Dima
@@ -37,6 +39,7 @@ public class Moorage {
     }
     
     public boolean unmoorShip(){
+        
         boolean complete = false;
         if(this.moorShip != null){
             this.moorShip = null;
@@ -52,5 +55,37 @@ public class Moorage {
     public int getNumberMoorage() {
         return numberMoorage;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName()+"{" + "moorShip=" + moorShip + ", numberMoorage=" + numberMoorage + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.moorShip);
+        hash = 67 * hash + this.numberMoorage;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Moorage other = (Moorage) obj;
+        if (!Objects.equals(this.moorShip, other.moorShip)) {
+            return false;
+        }
+        if (this.numberMoorage != other.numberMoorage) {
+            return false;
+        }
+        return true;
+    }
+    
     
 }

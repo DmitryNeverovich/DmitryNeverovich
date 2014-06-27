@@ -5,9 +5,8 @@
  */
 package by.epam.task03.entity;
 
-import by.epam.task03.thread.GenerateShip;
+import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.apache.log4j.Logger;
 
 /**
  *
@@ -41,5 +40,37 @@ public class Port {
     public boolean unloadStorehouse(int conatiners){
         return storehouse.removeContainers(conatiners);
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName()+"{" + "storehouse=" + storehouse + ", moorages=" + moorages + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 43 * hash + Objects.hashCode(this.storehouse);
+        hash = 43 * hash + Objects.hashCode(this.moorages);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Port other = (Port) obj;
+        if (!Objects.equals(this.storehouse, other.storehouse)) {
+            return false;
+        }
+        if (!Objects.equals(this.moorages, other.moorages)) {
+            return false;
+        }
+        return true;
+    }
  
+    
 }

@@ -11,10 +11,12 @@ package by.epam.task03.entity;
  * @author Dima
  */
 public class Storehouse {
-    private static final int MAX_CAPACITY = 1000;
+    
+    private static final int MAX_CAPACITY = 10000;
     private int containers;
     
     public boolean addContainers(int containers){
+       
         boolean complete = false;
         int futureContainers = this.containers + containers;
         if (futureContainers <= MAX_CAPACITY) {
@@ -24,6 +26,7 @@ public class Storehouse {
         return complete;
     }
     public boolean removeContainers(int containers){
+        
         boolean complete = false;
         int futureContainers = this.containers - containers;
         if (futureContainers >= 0) {
@@ -32,4 +35,32 @@ public class Storehouse {
         }
         return complete;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName()+"{" + "containers=" + containers + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + this.containers;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Storehouse other = (Storehouse) obj;
+        if (this.containers != other.containers) {
+            return false;
+        }
+        return true;
+    }
+        
 }

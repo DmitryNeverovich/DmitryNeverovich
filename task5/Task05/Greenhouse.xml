@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
+<gh:greenhouse xmlns:gh="http://www.example.com/Greenhouse" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="http://www.example.com/Greenhouse Greenhouse.xsd">
+    <flower id="n1" family="Orchids">
+        <name>Orchid</name>
+        <hight>20</hight>
+        <soil>podzolic</soil>
+        <origin>Europe</origin>
+        <multiplying>plate</multiplying>
+        <visualParameters>
+            <colorStalk>green</colorStalk>
+            <colorList>green</colorList> 
+            <growingtips>
+                <temperature>20</temperature>
+                <light>average</light>
+                <water>3</water>
+            </growingtips>
+        </visualParameters>
+    </flower>
+    <flower id="n2" family="Liliaceae">
+        <name>Lilium</name>
+        <hight>10</hight>
+        <soil>dirt</soil>
+        <origin>Asia</origin>
+        <multiplying>seed</multiplying>
+        <visualParameters>
+            <colorStalk>green</colorStalk>
+            <colorList>green</colorList> 
+            <growingtips>
+                <temperature>20</temperature>
+                <light>average</light>
+                <water>2</water>
+            </growingtips>
+        </visualParameters>
+    </flower>
+    <flower id="n3" family="Paeoniaceae">
+        <name>Peony</name>
+        <hight>12</hight>
+        <soil>podzolic</soil>
+        <origin>Europe</origin>
+        <multiplying>seed</multiplying>
+        <visualParameters>
+            <colorStalk>green</colorStalk>
+            <colorList>green</colorList> 
+            <growingtips>
+                <temperature>23</temperature>
+                <light>average</light>
+                <water>2</water>
+            </growingtips>
+        </visualParameters>
+    </flower>
+	<flower id="n4" family="Liliaceae">
+        <name>Tulip</name>
+        <hight>20</hight>
+        <soil>dirt</soil>
+        <origin>Europe</origin>
+        <multiplying>seed</multiplying>
+        <visualParameters>
+            <colorStalk>green</colorStalk>
+            <colorList>green</colorList> 
+            <growingtips>
+                <temperature>24</temperature>
+                <light>high</light>
+                <water>4</water>
+            </growingtips>
+        </visualParameters>
+    </flower>
+</gh:greenhouse>
